@@ -1,0 +1,1 @@
+<?php//true disables, false enables$login_disable = false;       //login$registration_disable = true;//registration?>
