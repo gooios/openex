@@ -1,0 +1,66 @@
+#page table{
+	width: 100%;
+}
+#page th {
+	background: #333; 
+	font-size: 18px;
+	color: #fff;
+	height: 30px;
+	padding: 5px;
+}
+#page th a:link {
+	color: #FFFFFF !important;
+}
+#page th a:visited {
+	color: #FFFFFF !important;
+}
+#page th a:hover {
+	color: #FFFFFF !important;
+}
+#page th a:active {
+	color: #FFFFFF !important;
+}
+#page tr {
+	font-family: verdana,arial,sans-serif;
+	font-size: 16px;
+	background:#d4e3e5;
+}
+#page tr:hover{
+	background:#ffff66;
+}
+#page td {
+	border-right: 1px #FFF;
+}
+
+#page-nav {
+	width: 100%;
+	float: left;
+	margin-bottom: 0 px;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc; 
+	border-top: 1px solid #ccc; 
+}
+#page-nav li {
+	float: left; 
+}
+#page-nav li a {
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #000;
+		border-right: 1px solid #ccc; 
+    }
+#page-nav li a:hover {
+	color: #000;
+	background: #feffff;
+	background: -moz-linear-gradient(top,  #feffff 0%, #d2ebf9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(100%,#d2ebf9));
+	background: -webkit-linear-gradient(top,  #feffff 0%,#d2ebf9 100%);
+	background: -o-linear-gradient(top,  #feffff 0%,#d2ebf9 100%);
+	background: -ms-linear-gradient(top,  #feffff 0%,#d2ebf9 100%);
+	background: linear-gradient(to bottom,  #feffff 0%,#d2ebf9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 );
+	}

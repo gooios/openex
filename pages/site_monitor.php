@@ -1,0 +1,1 @@
+<?phpif(!isUserLoggedIn()){header( 'Location: http://openex.pw/access_denied.php' ) ;die();}if(!isUserAdmin($id)){header( 'Location: http://openex.pw/access_denied.php' ) ;die();}echo "<b>Main Server Statistics</b>";echo '<pre class="load">';print_r(sys_getloadavg());echo '</pre>';//include("servermonitor.php")?>

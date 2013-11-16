@@ -1,0 +1,10 @@
+<?php
+//keyformat
+beginkey();
+
+$key_id=<key>   //the main key
+$PGP_SIG=<key> //the keys signature
+$key_n=<key>  //the keys name
+
+endkey();
+?>
