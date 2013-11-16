@@ -1,27 +1,40 @@
+<link href="assets/css/tables.css" type="text/css" rel="stylesheet" />
 <?php
+
 $id = $loggedInUser->user_id;
-if(isUserAdmin($id) == false)
+$account = $loggedInUser->display_username;
+if(!isUserLoggedIn()){
+header('Location: http://openex.pw/access_denied.php');
+}
+if(isUserAdmin($id) === true)
 {
-echo "BLARGH";
+echo "Welcome Admin</br></br></br>";
+echo "admin options go here</br>";
 $sql = mysql_query("SELECT * FROM Tickets");
 }
 else
 {
+echo "How may I help you today, <b>".$account."</b> ?</br></br></br>";
+echo "
+<ul id='page-nav'>
+	<li><a href='index.php?page=newticket'>Get Support</a></li>
+</ul>
+</br>";
 $sql = mysql_query("SELECT * FROM Tickets WHERE `user_id`='$id'");
 }
 
 $num = mysql_num_rows($sql);
 ?>
-<a href="index.php?page=newticket">Start New Support Ticket</a>
-			<div id="table-content">
-				<form id="mainform" action="">
-				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+
+			<div id="page">
+				<form action="">
+				<table id="page">
 				<tr>
-					<th class="table-header-check"><a id="toggle-all" ></a> </th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Ticket Subject</a>	</th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Posted</a></th>			
-					<th class="table-header-options line-left"><a href="">Answers</a></th>
-<th class="table-header-repeat line-left minwidth-1"><a href="">Status</a>
+					<th><a id="toggle-all" ></a> </th>
+					<th><a href="">Ticket Subject</a>	</th>
+					<th><a href="">Posted</a></th>			
+					<th><a href="">Answers</a></th>
+					<th><a href="">Status</a>
 				</tr>
 <?php
 for($i = 0;$i<$num;$i++)
@@ -40,7 +53,7 @@ else
 $open = "<font color=green>Closed</a>";
 }
 ?>
-				<tr class="alternate-row">
+				<tr>
 					<td><input  type="checkbox"/></td>
 					<td><a href="index.php?page=viewticket&id=<?echo $id; ?>"><? echo $subject;?></a></td>
 					<td><? echo $posted;?></td>

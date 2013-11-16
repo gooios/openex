@@ -13,6 +13,7 @@
 a { text-decoration: none;}
 html, body {
 	width: auto;
+	max-width: 962px;
 }
 ul {
 	list-style: none;
@@ -76,12 +77,14 @@ body{
 	}
 .container {
 	width: 100%;
+	max-width: 962px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .content {
 	width: 100%;
 	overflow-y: scroll;
+	background:fff;
 	margin-left: auto;
 	margin-right: auto;
 }

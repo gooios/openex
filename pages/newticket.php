@@ -2,13 +2,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-if (isset($_POST["subject"]) && isset($_POST["post"])) {
+if (isset($_POST['subject']) && isset($_POST['post']) && trim($_POST['subject']) != '' && trim($_POST['post']) != '' ) {
     $post    = mysql_real_escape_string(strip_tags($_POST["post"]));
     $uid     = $loggedInUser->user_id;
     $posted  = date("m/d/y g:i");
     $subject = mysql_real_escape_string(strip_tags($_POST["subject"]));
-mail("9183274313@messaging.sprintpcs.com","",$post);
-    @mysql_query("INSERT INTO `Tickets` (`subject` ,`user_id` ,`body` ,`posted`) VALUES ('$subject', '$uid', '$post', '$posted');");
+	mail("stuckinabox@live.com","",$post);
+    @mysql_query("INSERT INTO `Tickets` (`subject` ,`user_id` ,`body` ,`posted`) VALUES ('$subject', '$uid', '$post', '$posted');");		header('Location: index.php?page=support');
 }
 ?>
        <div id="table-content">

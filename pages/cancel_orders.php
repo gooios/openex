@@ -3,53 +3,6 @@
 include("../models/config.php");
 
 ?>
-
-<link rel="stylesheet" href="style.css" media="screen">
-
-<style>
-
-.top
-
-{
-
-background: #3a4043;
-
-border-top-left-radius: 4px;
-
-border-top-right-radius: 4px;
-
-text-transform: uppercase;
-
-font-weight: bold;
-
-padding: 5;
-
-width: 100%;
-
-}
-
-.box
-
-{
-
-background:#FFFFFF;
-
-padding:0;
-
-height:168px;
-
-border-bottom-left-radius: 4px;
-
-border-bottom-right-radius: 4px;
-
-border: 1px solid black;
-
-width:100%;
-
-}
-
-</style>
-
 <center>
 
 <?
@@ -79,9 +32,9 @@ Your Orders
 
 </div>
 
-<div class="box" style="overflow-y:scroll;">
+<div class="box">
 
-<table id="tablestructure" style="border: 1px solid black;border-bottom-left-radius:4px;border-bottom-right-radius:4px;" class="data">
+<table style="border: 1px solid black;border-bottom-left-radius:4px;border-bottom-right-radius:4px;" class="data">
 
 <thead>
 
@@ -117,15 +70,15 @@ while ($row = mysql_fetch_assoc($sql)) {
 
 <tr>
 
-	<th  style="border-right:1px solid black; "id="th3"><?php echo sprintf('%.9f',$row["Value"]);?></th>
+	<th  style="border-right:1px solid black; ><?php echo sprintf('%.9f',$row["Value"]);?></th>
 
     <th id="th2"><?php echo $row["Amount"];?></th>
 <?php 
 $marketid = $_GET["market"];
 $ids = $row["Id"];
 ?>
-	<th style="border-left:1px solid black; " id="th4"><?php echo sprintf('%.9f',$row["Amount"] * $row["Value"]);?></th>
-	<th style=" border-left:1px solid black;" id="th4"><a href="index.php?page=trade&market=<?php echo $marketid; ?>&cancel=<?php echo $ids; ?>">Cancel</a></th>
+	<th style="border-left:1px solid black; " ><?php echo sprintf('%.9f',$row["Amount"] * $row["Value"]);?></th>
+	<th style=" border-left:1px solid black;" ><a href="index.php?page=trade&market=<?php echo $marketid; ?>&cancel=<?php echo $ids; ?>">Cancel</a></th>
 
 
 </tr>

@@ -1,10 +1,10 @@
- <?
+<?phpif(!isUserLoggedIn()) {	header('Location: access_denied.php');	die(); }
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 $id    = @mysql_real_escape_string($_GET["id"]);
 $sql   = @mysql_query("SELECT * FROM Tickets WHERE `id`=$id");
-$owner = @mysql_result($sql, 0, "user_id");$admin = 7;
+$owner = @mysql_result($sql, 0, "user_id");
 if ($loggedInUser->user_id == $owner OR isUserAdmin($id)) {
     if (isset($_GET["action"])) {
         if ($_GET["action"] == "closev") {

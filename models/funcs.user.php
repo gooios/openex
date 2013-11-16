@@ -1,5 +1,5 @@
 <?php
-function GetTickets(){if(isUserAdmin($loggedInUser->user_id)){$sql = mysql_query("SELECT * FROM Tickets");return $sql;}else{$sql = mysql_query("SELECT * FROM Tickets WHERE user_id='$id'");return $sql;}}	function isUserAdmin($user){    $sql = mysql_query("SELECT * FROM userCake_Users WHERE `User_ID`='$user'");    if (mysql_result($sql, 0, "Group_ID") < 8) {        return true;    } else {        return false;    }}
+function GetTickets(){if(isUserAdmin($loggedInUser->user_id)){$sql = mysql_query("SELECT * FROM Tickets");return $sql;}else{$sql = mysql_query("SELECT * FROM Tickets WHERE user_id='$id'");return $sql;}}	function isUserAdmin($user){    $sql = mysql_query("SELECT * FROM userCake_Users WHERE `User_ID`='$user'");    if (mysql_result($sql, 0, "Group_ID") > 8) {        return true;    } else {        return false;    }}
 	
 	
 	function usernameExists($username)

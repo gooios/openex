@@ -1,9 +1,33 @@
 <?php
-//echo "THE WHOLE TRADE SITE WILL BE RESETING ALL TRADES";
-if($_SERVER['REMOTE_ADDR'] != "")
-{
-//die("After long thought I have decided to discontinue IceyCrypt. If you wish to have your money back just send an email to support@script-it.net with your account name. Be sure you email me from the email that you created the account with otherwise you will not get your money back!");
-}
+/*    Main Feature Config     */
+
+//Site Title
+$title="OpenEx";
+
+//maintenance
+$maintenance = false;
+$maint_url = "system/maintenance.html";
+
+//Login/Registration
+$login_disable = false;
+$registration_disable = true;
+
+//deposits
+$deposit_disabled = true;
+
+//withdrawals
+$withdrawal_disabled = true;
+
+//registration disabled message
+$registration_message = "<b>Registrations are currently disabled.</b></br>However you can login with a test username if you like.</br><h4>Test Users</h4><h5>format: user | pass </h5>";
+
+//Test usernames displayed(if message enabled)
+$testnamepair1 ="<h6>test123 | 12345678</h6>";
+$testnamepair2 ="<h6>test2 | password</h6>";
+$testnamepair3 ="<h6>test5 | password</h6>";
+$testnamepair4 ="<h6>TraderBob | 12345678</h6>";
+
+/*   End Main Feature Config    */
 
 date_default_timezone_set('America/New_York');
 
